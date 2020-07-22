@@ -44,6 +44,17 @@ class Nod32mirrorConfig:
         self.cf.set("Mirrors", "server_3", "")
         self.cf.set("Mirrors", "server_4", "")
 
+        self.cf.add_section("Actions")
+        self.cf.set("Actions", "make_update", "0")
+        self.cf.set("Actions", "make_flush", "0")
+        self.cf.set("Actions", "get_key", "0")
+        self.cf.set("Actions", "keys_update", "0")
+        self.cf.set("Actions", "keys_clean", "0")
+        self.cf.set("Actions", "keys_show", "0")
+        self.cf.set("Actions", "disable_network_limits", "0")
+        self.cf.set("Actions", "show_help", "0")
+        self.cf.set("Actions", "show_version", "0")
+
         with open(self.path, "w") as config_file:
             self.cf.write(config_file)
 
