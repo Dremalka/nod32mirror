@@ -37,6 +37,7 @@ class Nod32mirrorConfig:
         self.cf.set("Settings", "useragent", "ESS Update")
         self.cf.set("Settings", "timestamp_file_name", "lastevent.txt")
         self.cf.set("Settings", "version_file_name", "version.txt")
+        self.cf.set("Settings", "version_file_name", "version.txt")
 
         self.cf.add_section("Mirrors")
         self.cf.set("Mirrors", "server_1", "")
@@ -54,6 +55,11 @@ class Nod32mirrorConfig:
         self.cf.set("Actions", "disable_network_limits", "0")
         self.cf.set("Actions", "show_help", "0")
         self.cf.set("Actions", "show_version", "0")
+
+        self.cf.add_section("Keys")
+        self.cf.set("Keys", "keys_directory", "")
+        self.cf.set("Keys", "valid_keys_filename", "validkeys.txt")
+        self.cf.set("Keys", "invalid_keys_filename", "invalidkeys.txt")
 
         with open(self.path, "w") as config_file:
             self.cf.write(config_file)
